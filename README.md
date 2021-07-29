@@ -2,4 +2,8 @@ This is the fourth and final project of The Odin Project's Foundations curriculu
 
 Live Preview: https://jstan811.github.io/calculator/
 
+Skills Demonstrated:
+    - CSS Grid used for page design
+    - more to come...
+
 by: Jake Standley
