@@ -2,12 +2,12 @@
 const displayText = document.querySelector('.displayText');
 
 const numButtons = document.querySelectorAll('.bNum');
-const addButton = document.querySelector('.bAdd');
-const subtractButton = document.querySelector('.bSubtract');
-const multiplyButton = document.querySelector('.bMultiply');
-const divideButton = document.querySelector('.bDivide');
-const equalsButton = document.querySelector('.bEquals');
-const clearButton = document.querySelector('.bClear');
+const addButton = document.querySelector('#bAdd');
+const subtractButton = document.querySelector('#bSubtract');
+const multiplyButton = document.querySelector('#bMultiply');
+const divideButton = document.querySelector('#bDivide');
+const equalsButton = document.querySelector('#bEquals');
+const clearButton = document.querySelector('#bClear');
 
 let displayValue = 0;
 let operatorValue = '';
@@ -80,7 +80,7 @@ numButtons.forEach((button) => {
 });
 
 clearButton.addEventListener('click', () => {
-    displayText.textContent = '';
+    displayText.textContent = '0';
     displayValue = 0;
     operatorValue = '';
 });

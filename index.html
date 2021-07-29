@@ -1,32 +1,41 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Page Title</title>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="main.css">
   <script src="main.js" defer></script>
 </head>
+
 <body>
-    <h1>My Calculator</h1>
+  <h1>My Calculator</h1>
+  <div class="calculator">
     <div class="display">
-      <p class="displayText"></p>
+      <p class="displayText">0</p>
     </div>
-    <button class = 'bNum'>1</button>
-    <button class = 'bNum'>2</button>
-    <button class = 'bNum'>3</button>
-    <button class = 'bNum'>4</button>
-    <button class = 'bNum'>5</button>
-    <button class = 'bNum'>6</button>
-    <button class = 'bNum'>7</button>
-    <button class = 'bNum'>8</button>
-    <button class = 'bNum'>9</button>
-    <button class = 'bNum'>0</button>
-    <button class = 'bAdd'>+</button>
-    <button class = 'bSubtract'>-</button>
-    <button class = 'bMultiply'>*</button>
-    <button class = 'bDivide'>/</button>
-    <button class = 'bEquals'>=</button>
-    <button class = 'bClear'>clear</button>
+    <div class='numButtons'>
+      <button class='bNum'>9</button>
+      <button class='bNum'>8</button>
+      <button class='bNum'>7</button>
+      <button class='bNum'>6</button>
+      <button class='bNum'>5</button>
+      <button class='bNum'>4</button>
+      <button class='bNum'>3</button>
+      <button class='bNum'>2</button>
+      <button class='bNum'>1</button>
+      <button class='bNum' id='bNum0'>0</button>
+    </div>
+    <div class='opButtons'>
+      <button class = 'bOp' id='bClear'>clear</button>
+      <button class = 'bOp' id='bAdd'>+</button>
+      <button class = 'bOp' id='bSubtract'>-</button>
+      <button class = 'bOp' id='bMultiply'>*</button>
+      <button class = 'bOp' id='bDivide'>/</button>
+      <button class = 'bOp' id='bEquals'>=</button>
+    </div>
+  </div>
 </body>
+
 </html>
