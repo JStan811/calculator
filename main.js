@@ -167,15 +167,3 @@ equalsButton.addEventListener('click', () => {
     clearSwitch = 1;
     operatorSwitch = 0;
 })
-
-
-
-//testing
-
-let stringX = '11';
-
-let numberX = .000000000000000000000000000001;
-
-console.log(numberX.toExponential());
-
-console.log(Number(stringX));
