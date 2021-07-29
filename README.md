@@ -6,4 +6,9 @@ Skills Demonstrated:
     - CSS Grid used for page design
     - more to come...
 
+Potential Improvements:
+    - Add keyboard support
+    - Add function to round decimal values if they are too large for display
+    - Add buttons for other math operations (exponent, factorial, square root, etc.)
+
 by: Jake Standley
