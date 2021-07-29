@@ -1,3 +1,7 @@
+body {
+    background-color: #F6F6F6;
+}
+
 .calculator {
     background-color:#1A2D34;
     height: 500px;
@@ -6,7 +10,7 @@
     display: grid;
     grid-template-columns: 1fr 110px;
     grid-template-rows: 60px 1fr;
-    margin-top: 20px;
+    margin-top: 150px;
     border-radius: 5px;
     border: 2px solid gray;
 }
@@ -75,4 +79,10 @@
 
 button {
     border-radius: 5px;
+}
+
+footer {
+    margin-top: 10px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
