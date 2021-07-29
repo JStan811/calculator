@@ -2,12 +2,15 @@
 const displayText = document.querySelector('.displayText');
 
 const numButtons = document.querySelectorAll('.bNum');
+const decimalButton = document.querySelector('#bDecimal');
+const backspaceButton = document.querySelector('#bBackspace');
 const addButton = document.querySelector('#bAdd');
 const subtractButton = document.querySelector('#bSubtract');
 const multiplyButton = document.querySelector('#bMultiply');
 const divideButton = document.querySelector('#bDivide');
 const equalsButton = document.querySelector('#bEquals');
 const clearButton = document.querySelector('#bClear');
+
 
 let displayValue = 0;
 let operatorValue = '';
@@ -54,6 +57,8 @@ const setOperationButtonBehavior = function(opValue) {
     if(operatorValue) {
         displayText.textContent = 
             operate(operatorValue, tempa, tempb);
+        //if result is bigger than the screen allows, switch to exponential
+        displayText.textContent = limitDisplayValue(displayText.textContent);    
         //now that the displayValue has changed, need to store it again for next operation
         displayValue = Number(displayText.textContent);
     };
@@ -64,6 +69,18 @@ const setOperationButtonBehavior = function(opValue) {
     operatorSwitch = 1;
 }
 
+//function to limit displayed value length after operation
+const limitDisplayValue= function(value) {
+    let string = value.toString();
+    let num = Number(value);
+    let result;
+    if (string.length > 13) {
+        result = num.toExponential();
+        return result;
+    }
+    else return value;
+}
+
 //event listeners
 numButtons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -71,6 +88,9 @@ numButtons.forEach((button) => {
         if (displayText.textContent === '0') clearSwitch = 1;
         // if clearSwitch is set to 1, clear display before displaying number
         if (clearSwitch) displayText.textContent = '';
+        // limit total digits on display screen
+        if (displayText.textContent.length === 13) return;
+        // this is where the display is actually changed
         displayText.textContent += button.textContent;
         // reset clearSwitch so next number entered does not clear screen
         clearSwitch = 0;
@@ -78,6 +98,31 @@ numButtons.forEach((button) => {
         operatorSwitch = 0;
     });
 });
+
+decimalButton.addEventListener('click', ()  => {
+    // limit total digits on display screen
+    if (displayText.textContent.length === 14) return;
+    // if clearSwitch is set to 1, set display to 0 before adding decimal to it
+    if (clearSwitch) displayText.textContent = '0';
+    // if display value already has decimal, do nothing
+    if (displayText.textContent.includes('.')) return;
+    displayText.textContent += decimalButton.textContent;
+    // reset clearSwitch so next number entered does not clear screen
+    clearSwitch = 0;
+    // reset operatorSwitch so next operator functions normally
+    operatorSwitch = 0;
+});
+
+backspaceButton.addEventListener('click', () => {
+    //if the previous button press was an operator, reset operator value, then do nothing
+    if(operatorSwitch) {
+        operatorValue = '';
+        return;
+    }
+    displayText.textContent = displayText.textContent.substring(0, displayText.textContent.length - 1);
+    if (displayText.textContent === '') displayText.textContent = 0;
+});
+
 
 clearButton.addEventListener('click', () => {
     displayText.textContent = '0';
@@ -114,6 +159,8 @@ equalsButton.addEventListener('click', () => {
     }
     displayText.textContent = 
         operate(operatorValue, displayValue, Number(displayText.textContent));
+    //if result is bigger than the screen allows, switch to exponential
+    displayText.textContent = limitDisplayValue(displayText.textContent);
     //reset operatorValue so next operation knows not to use the previous value
     operatorValue = '';
     //toggle clear switch so next number press clears screen
@@ -121,4 +168,14 @@ equalsButton.addEventListener('click', () => {
     operatorSwitch = 0;
 })
 
+
+
 //testing
+
+let stringX = '11';
+
+let numberX = .000000000000000000000000000001;
+
+console.log(numberX.toExponential());
+
+console.log(Number(stringX));

@@ -4,30 +4,34 @@ body {
 
 .calculator {
     background-color:#1A2D34;
-    height: 500px;
+    height: 530px;
     width: 400px;
     margin: auto;
     display: grid;
     grid-template-columns: 1fr 110px;
-    grid-template-rows: 60px 1fr;
+    grid-template-rows: 80px 1fr;
     margin-top: 150px;
-    border-radius: 5px;
+    border-radius: 15px;
     border: 2px solid gray;
 }
 
 .display {
     width: 380px;
-    height: 50px;
+    height: 65px;
     background-color: #447558;
     grid-column: 1 / 3;
     grid-row: 1 / 2;
     place-self: center;
+    position: relative;
 }
 
 .displayText {
     text-align: end;
-    font-size: 3rem;
-    font-family: Arial, Helvetica, sans-serif
+    font-size: 3.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    bottom: 5px;
+    right: 3px;
 }
 
 .numButtons {
@@ -39,13 +43,43 @@ body {
 }
 
 .bNum {
-    height: 60px;
-    width: 60px;
+    height: 70px;
+    width: 70px;
     place-self: center;
     background-color: #C5DEDE;
     font-size: 1.5em;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+#bDecimal {
+    height: 70px;
+    width: 70px;
+    place-self: center;
+    background-color: #C5DEDE;
+    font-size: 1.5em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#bBackspace {
+    height: 60px;
+    width: 60px;
+    place-self: center;
+    background-color: #e54e4e;
+    color: white;
+    font-size: 1.5em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#bEquals {
+    height: 70px;
+    width: 70px;
+    place-self: center;
+    color: white;
+    background-color: #00D4D3;
+    font-size: 1.5em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 
 .opButtons {
     grid-column: 2 / 3;
@@ -66,10 +100,6 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-#bNum0 {
-    grid-column: 2 / 3;
-}
-
 #bClear {
     color: white;
     background-color: black;
@@ -78,7 +108,7 @@ body {
 }
 
 button {
-    border-radius: 5px;
+    border-radius: 7.5px;
 }
 
 footer {
