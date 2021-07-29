@@ -1,0 +1,10 @@
+.display {
+    width: 300px;
+    height: 30px;
+    border: 1px solid black;
+}
+
+.displayText {
+    text-align: end;
+    font-size: 2rem;
+}
