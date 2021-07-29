@@ -107,6 +107,11 @@ equalsButton.addEventListener('click', () => {
         clearSwitch = 1;
         return;
     }
+    //if the previous button press was an operator, reset operator value, then do nothing
+    if(operatorSwitch) {
+        operatorValue = '';
+        return;
+    }
     displayText.textContent = 
         operate(operatorValue, displayValue, Number(displayText.textContent));
     //reset operatorValue so next operation knows not to use the previous value
